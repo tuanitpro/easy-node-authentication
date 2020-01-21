@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  web:
+      container_name: node_authen
+      build:
+        context: ./
+      ports:
+        - "8001:8001"
+      
+      restart: always
+      volumes:
+        - .:/app
+      environment:
+        - MONGO_URI=mongodb://mongodb:27017
+      depends_on:
+        - mongodb
+      networks:
+        - app-network
+   
+  mongodb:
+      image: mongo
+      container_name: mongodb
+      restart: on-failure
+      ports:
+          - 27017:27017
+      volumes:
+          - ./data/db:/data/db
+          - ./data/logs:/data/logs
+      networks:
+        - app-network
+networks:
+  app-network:
+    driver: bridge
