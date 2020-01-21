@@ -1,6 +1,14 @@
 {
   "name": "node-authentication",
   "main": "server.js",
+  "version": "1.0.0",
+  "description": "node authen sample",
+  "author": "tuanitpro@gmail.com",
+  "license": "The MIT License (MIT)",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/tuanitpro/easy-node-authentication.git"
+  },
   "dependencies": {
     "bcrypt-nodejs": "latest",
     "body-parser": "^1.19.0",

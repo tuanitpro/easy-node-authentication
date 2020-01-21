@@ -26,6 +26,7 @@ services:
       volumes:
           - ./data/db:/data/db
           - ./data/logs:/data/logs
+        command: --serviceExecutor adaptive
       networks:
         - app-network
 networks:
